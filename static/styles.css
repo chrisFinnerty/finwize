@@ -13,30 +13,36 @@
 
 @media (max-width: 1920px) {
     .text-md {
-        font-size: .9rem; /* Example: Adjust font size for x-large screens */
+        font-size: 1rem; /* Example: Adjust font size for x-large screens */
     }
 }
 
 @media (max-width: 1511px) {
     .text-md {
-        font-size: .7rem; /* Example: Adjust font size for x-large screens */
+        font-size: 1rem; /* Example: Adjust font size for x-large screens */
     }
 }
 
 @media (max-width: 992px) {
     .text-md {
-        font-size: .7rem; /* Example: Adjust font size for large screens */
+        font-size: 1rem; /* Example: Adjust font size for large screens */
     }
 }
 
 @media (max-width: 768px) {
     .text-md {
-        font-size: .7rem; /* Example: Adjust font size for medium screens */
+        font-size: 1rem; /* Example: Adjust font size for medium screens */
     }
 }
 
 @media (max-width: 576px) {
     .text-md {
-        font-size: .6rem; /* Example: Adjust font size for small screens */
+        font-size: .8rem; /* Example: Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 443px) {
+    .text-md {
+        font-size: .7rem; /* Example: Adjust font size for small screens */
     }
 }
