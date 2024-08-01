@@ -29,7 +29,7 @@ def create_app(db_name, testing=False):
     # IMPORTANT!
     # ------------------------------------------------------------------------------------
     # Remove connect_db() when deploying to Render!
-    connect_db(app)
+    # connect_db(app)
     # ------------------------------------------------------------------------------------
 
     # Helper Functions
