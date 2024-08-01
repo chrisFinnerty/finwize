@@ -1,0 +1,45 @@
+{% extends 'navbars.html' %}
+
+{% block title %}Transactions - FinWize{% endblock %}
+
+{% block main_content %}
+<div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+        <h1>Transactions</h1>
+            <div class="row container">
+                <table class="table table-secondary table-striped">
+                    <thead>
+                            <tr>
+                                <th scope="col">Transaction Date</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Subcategory</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {% if transactions %}
+                            {% for tran in transactions %}
+                                <tr>
+                                    <td>{{ tran.tran_date }}</td>
+                                    <td>{{ tran.description }}</td>
+                                    <td>{{ tran.user_category.name }}</td>
+                                    <td>{{ tran.user_subcategory.name }}</td>
+                                    <td>${{ tran.amount }}</td>
+                                    <td>
+                                        <a href="{{ url_for('update_transaction', user_id=user_id, tran_id=tran.id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td colspan="6">No transactions found.</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+{% endblock %}

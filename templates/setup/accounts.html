@@ -1,0 +1,61 @@
+{% extends 'navbars.html' %}
+
+{% block title %}Accounts - FinWize{% endblock %}
+
+{% block main_content %}
+<div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+        <div class="container">
+            <h1>Accounts</h1>
+            <table class="table table-secondary table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Account Name</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Created On</th>
+                        <th scope="col">Updated On</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if accounts %}
+                    {% for account in accounts %}
+                    <tr>
+                        <td>{{ account.account_name }}</td>
+                        <td>${{ account.balance }}</td>
+                        <td>{{ account.created_at }}</td>
+                        {% if account.update_at %}
+                        <td>{{ account.updated_at }}</td>
+                        {% else %}
+                        <td>N/A</td>
+                        {% endif %}
+                        <td>
+                            <a href="{{ url_for('update_account', user_id=user_id, account_id=account.id) }}" class="btn btn-primary btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="5">No accounts found. Add an account below!</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h2>Create Account</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                
+                {% for field in form if field.widget.input_type != 'hidden' %}
+                    {% for error in field.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                        {{ field(placeholder=field.label.text, class="form-control") }}
+                {% endfor %}
+                <button class="btn btn-primary btn-lg btn-block">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

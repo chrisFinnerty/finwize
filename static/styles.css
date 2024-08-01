@@ -11,6 +11,25 @@
     padding: 8px !important;
 }
 
+/* Custom CSS for accordion header background */
+.custom-accordion-header .accordion-button {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.custom-accordion-header .accordion-button:not(.collapsed) {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#home-aside {
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+
 @media (max-width: 1920px) {
     .text-md {
         font-size: 1rem; /* Example: Adjust font size for x-large screens */
@@ -39,10 +58,16 @@
     .text-md {
         font-size: .8rem; /* Example: Adjust font size for small screens */
     }
+    .logo-md {
+        font-size: 1rem; /* Example: Adjust font size for small screens */
+    }
 }
 
 @media (max-width: 443px) {
     .text-md {
         font-size: .7rem; /* Example: Adjust font size for small screens */
+    }
+    .logo-md {
+        font-size: .9rem; /* Example: Adjust font size for small screens */
     }
 }

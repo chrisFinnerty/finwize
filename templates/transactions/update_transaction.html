@@ -1,0 +1,39 @@
+{% extends 'navbars.html' %}
+
+{% block title %}Update Transaction - FinWize{% endblock %}
+
+{% block main_content %}
+<div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+        <h1>Update Transaction</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.description.label }}
+                {{ form.description(class="form-control form-control-sm") }}
+            </div>
+            <div class="mb-3">
+                {{ form.tran_date.label }}
+                {{ form.tran_date(class="form-control form-control-sm") }}
+            </div>
+            <div class="mb-3">
+                {{ form.amount.label }}
+                {{ form.amount(class="form-control form-control-sm") }}
+            </div>
+            <div class="mb-3">
+                {{ form.account.label }}
+                {{ form.account(class="form-control form-control-sm") }}
+            </div>
+            <div class="mb-3">
+                {{ form.category.label }}
+                {{ form.category(class="form-control form-control-sm") }}
+            </div>
+            <div class="mb-3">
+                {{ form.subcategory.label }}
+                {{ form.subcategory(class="form-control form-control-sm") }}
+            </div>
+            <button class="btn btn-primary btn-lg btn-block">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

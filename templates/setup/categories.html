@@ -1,0 +1,53 @@
+{% extends 'navbars.html' %}
+
+{% block title %}Categories - FinWize{% endblock %}
+
+{% block main_content %}
+<div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+        <h1>Categories</h1>
+            <div class="row container">
+                <table class="table table-secondary table-striped">
+                    <thead>
+                            <tr>
+                                <th scope="col">Category</th>
+                                <th scope="col">Subcategory</th>
+                                <th scope="col">Subcategory Status</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {% if user_categories or user_subcategories %}
+                            {% for user_cat in user_categories %}
+                                {% for user_subcat in user_subcategories if user_subcat.user_category_id == user_cat.id %}
+                                <tr>
+                                    <td>{{ user_cat.name }}</td>
+                                    <td>{{ user_subcat.name }}</td>
+                                    <td>{{ 'Active' if user_subcat.active else 'Inactive' }}</td>
+                                {% endfor %}
+                            {% endfor %}
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+                <h1>Add Category</h1>
+                <form method="POST">
+                    {{ cat_form.hidden_tag() }}
+                    
+                    {% for field in cat_form if field.widget.input_type != 'hidden' %}
+                        {% for error in field.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                            {{ field(placeholder=field.label.text, class="form-control") }}
+                    {% endfor %}
+                    <button class="btn btn-primary btn-lg btn-block">Save</button>
+                </form>
+            </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'navbars.html' %}
+
+{% block title %}Profile - FinWize{% endblock %}
+
+{% block main_content %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+        <h1>Profile</h1>
+            <form>
+                <label class="form-label">Email:</label>
+                <input class="form-control" placeholder="{{ g.user.email }}" disabled></input>
+                <label class="form-label">Account Created:</label>
+                <input class="form-control" placeholder="{{ g.user.created_at }}" disabled></input>
+            </from>
+    </div>
+</div>
+
+{% endblock %}

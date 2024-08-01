@@ -1,0 +1,20 @@
+category_id,name,active,created_at
+1,Rent/Mortgage,True,2024-07-19 13:57:00000000
+1,Insurance,True,2024-07-19 13:57:00000000
+1,Maintenance,True,2024-07-19 13:57:00000000
+2,Electric,True,2024-07-19 13:57:00000000
+2,Gas,True,2024-07-19 13:57:00000000
+2,Water,True,2024-07-19 13:57:00000000
+2,Sewage/Trash,True,2024-07-19 13:57:00000000
+2,Internet,True,2024-07-19 13:57:00000000
+2,Cellphone,True,2024-07-19 13:57:00000000
+3,Groceries,True,2024-07-19 13:57:00000000
+3,Restaurants,True,2024-07-19 13:57:00000000
+4,Car Payment,True,2024-07-19 13:57:00000000
+4,Car Insurance,True,2024-07-19 13:57:00000000
+4,Gas,True,2024-07-19 13:57:00000000
+4,Maintenance,True,2024-07-19 13:57:00000000
+5,Entertainment,True,2024-07-19 13:57:00000000
+5,Health & Wellness,True,2024-07-19 13:57:00000000
+5,Vacation,True,2024-07-19 13:57:00000000
+5,Savings,True,2024-07-19 13:57:00000000
