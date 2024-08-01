@@ -95,10 +95,7 @@ class Account(db.Model):
     __table_args__ = (db.UniqueConstraint('user_id', 'account_name', name='uq_user_account_name'),)
 
 class Category(db.Model):
-    """Categories for each user to see in their monthly budgets.
-    Maybe create a flag to set category + sub to active/inactive, then load dashboard with info.
-    
-    Removed user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False) so that categories are now global/not tied to user."""
+    """Preset Categories from the generator/categories.csv file. Mainly for new accounts to have access to Categories out of the box."""
 
     __tablename__ = 'categories'
 
@@ -109,7 +106,7 @@ class Category(db.Model):
     updated_at = db.Column(db.Date, onupdate=datetime.now(timezone.utc))
 
 class Subcategory(db.Model):
-    """Subcategories for each budget category."""
+    """Preset Subcategories from the generator/subcategories.csv file. Mainly for new accounts to have access to Subcategories out of the box."""
 
     __tablename__ = 'subcategories'
 
