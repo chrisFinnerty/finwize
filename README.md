@@ -19,7 +19,7 @@ They can also add transactions that occured in a time period (past or present) t
 - Postgresql
 
 ### Live
-The app is deployed on Render: (insert Render link)
+The app is deployed on Render: https://finwize.onrender.com/
 
 ### Project Breakdown
 #### Database Models
