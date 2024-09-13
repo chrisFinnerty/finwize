@@ -76,7 +76,8 @@ def create_app(db_name, testing=False):
 
             # Format the month and year
             selected_date = datetime(selected_year, selected_month, 1)
-            formatted_date = selected_date.strftime('%b %Y')
+            formatted_date = selected_date.strftime('%B %Y')
+            short_formatted_date = selected_date.strftime('%b %Y')
 
             # Ensure a MonthlyBudget exists for each UserSubcategory
             for subcategory in user_subcategories:
@@ -140,7 +141,8 @@ def create_app(db_name, testing=False):
                                 latest_account_date_str=latest_account_date_str,
                                 selected_month=selected_month,
                                 selected_year=selected_year,
-                                formatted_date=formatted_date)
+                                formatted_date=formatted_date,
+                                short_formatted_date=short_formatted_date)
         else:
             return render_template('anon-home.html')
         
