@@ -124,7 +124,7 @@ def create_app(db_name, testing=False):
             .filter(Account.user_id == g.user.id).scalar()
 
             if latest_account_date:
-                latest_account_date_str = latest_account_date.strftime('%B %d, %Y')
+                latest_account_date_str = latest_account_date.strftime('%b %d, %Y')
             else:
                 latest_account_date_str = 'No accounts found'
 
