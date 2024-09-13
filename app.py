@@ -76,7 +76,7 @@ def create_app(db_name, testing=False):
 
             # Format the month and year
             selected_date = datetime(selected_year, selected_month, 1)
-            formatted_date = selected_date.strftime('%B %Y')
+            formatted_date = selected_date.strftime('%b %Y')
 
             # Ensure a MonthlyBudget exists for each UserSubcategory
             for subcategory in user_subcategories:
