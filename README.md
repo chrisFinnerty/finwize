@@ -5,7 +5,7 @@ They can also add transactions that occured in a time period (past or present) t
 
 ### Tech Stack
 #### Front End
-- HTMl
+- HTML
 - CSS
 - Javascript
 - Bootstrap
